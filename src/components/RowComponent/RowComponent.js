@@ -114,7 +114,6 @@ class RowComponent extends Component {
     stopTimer = () => {
         console.log('in stopTimer');
         clearInterval(this.timer);
-        let now = new Date().getTime();
         axios({
             method: 'PUT', 
             url: '/medlist',
