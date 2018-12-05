@@ -13,10 +13,6 @@
   .App-intro {
     font-size: large;
   }
-body {
-    font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #EDEFF3;
-}
 .center{
     margin: 0 auto;
 }
@@ -29,6 +25,7 @@ h2 {
 }
 html, body {
     font-family: 'Source Code Pro', monospace;
+    background-color: #EDEFF3;
 }
 input {
     margin: 5px;
@@ -39,6 +36,14 @@ input[type="submit"] {
     margin: 10px;
 }
 .flex-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.flex-box-form {
+    margin-top: 25vh; 
     width: 100%;
     display: flex;
     flex-direction: row; 

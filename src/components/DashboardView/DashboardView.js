@@ -18,7 +18,6 @@ class DashboardView extends Component {
             name: '',
             medList: [],
             defaultDate: '',
-            expiration_time: 'N/A'
         }
     }
     componentDidMount = () => {
@@ -60,13 +59,12 @@ class DashboardView extends Component {
         axios({
             method: 'POST',
             url: '/medlist',
-            data: { name: this.state.name, room_id: this.state.room, expiration_time: this.state.expiration_time }
+            data: { name: this.state.name, room_id: this.state.room, expiration_time: 'N/A' }
         }).then((response) => {
             this.getMedLists();
             this.setState({
                 name: '',
                 room: 20,
-                expiration_time: 'N/A'
             })
         }).catch((error) => {
             console.log('Error posting your lists, please try again', error);
@@ -76,7 +74,7 @@ class DashboardView extends Component {
     render() {
         return (
             <div>
-                <Button className="float-right" onClick={this.logout}>Log Out</Button>
+                <Button color="secondary" variant="contained" className="float-right" onClick={this.logout}>Log Out</Button>
                 <div className="flex-box">
                     <label>Room # (required): </label>
                     <NativeSelect

@@ -4,7 +4,7 @@ const pool = require('../modules/pool.js');
 
 router.get('/', (req, res) => {
     if (req.isAuthenticated){
-        const query = `SELECT * FROM "medications" WHERE "user_id" = $1;`; 
+        const query = `SELECT * FROM "medications" WHERE "user_id" = $1 ORDER BY "expiration_time" ASC;`; 
         pool.query(query, [req.user.id]).then((results) => {
             res.send(results.rows);
         }).catch((error) => {

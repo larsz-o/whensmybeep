@@ -78,7 +78,7 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="flex-box-form">
         {this.renderAlert()}
         <form>
           <Typography variant="headline">Create Account</Typography>

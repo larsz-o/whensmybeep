@@ -18,7 +18,7 @@ class HomeView extends Component {
     render(){
         return(
             <div>
-                <DashboardView/>
+                <DashboardView history={this.props.history}/>
             </div>
         ); 
     }

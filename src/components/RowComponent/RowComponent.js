@@ -160,7 +160,8 @@ class RowComponent extends Component {
                 <TableCell className={this.state.expired}>{this.props.med.room_id}</TableCell>
                 <TableCell className={this.state.expired}>{this.props.med.name}</TableCell>
                 <TableCell className={this.state.expired}>{this.state.hours} h {this.state.minutes} m {this.state.seconds} s</TableCell>
-                {this.state.expiration_time > 0 && <TableCell className={this.state.expired}>{moment(this.state.expiration_time).format('LTS')}</TableCell>}
+                {this.state.expiration_time !== 'N/A' && <TableCell className={this.state.expired}>{moment(this.state.expiration_time).format('LTS')}</TableCell>}
+                {this.state.expiration_time === 'N/A' && <TableCell className={this.expired}>N/A</TableCell>}
                 {/* when start is clicked, modal pops up to ask when the med should end */}
                 <TableCell className={this.state.expired}><Button variant="contained" color="primary" onClick={this.handleChangeStart}>Start</Button></TableCell>
                 <Dialog
